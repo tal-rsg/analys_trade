@@ -12,7 +12,6 @@ from ta import add_all_ta_features
 import pandas_ta
 import btalib
 import numpy as np
-import matplotlib.pyplot as plt
 import seaborn as sns
 import hvplot.pandas
 import pandas as pd
