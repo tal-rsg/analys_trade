@@ -23,12 +23,12 @@ st.write("by TrSg")
 st.sidebar.title("Mensagem")
 
 # user inputs on sidebar
-st.sidebar.markdown("Análise de algumas ações da Ibovespa")
+st.sidebar.markdown("Análise ações na Ibovespa")
 
 
 # back to main body
 st.header("Cotacação Bitcoin")
-st.markdown("Dados extraidos Yahoo! Finance's API biblioteca yfinance [https://pypi.org/project/yfinance/].")
+st.markdown("Dados extraidos Yahoo! Finance's API biblioteca yfinance[[https://pypi.org/project/yfinance/]].")
 
 #st.subheader('Key:')
 #st.markdown("✅ Stock tree: black")
@@ -39,13 +39,12 @@ st.markdown("Dados extraidos Yahoo! Finance's API biblioteca yfinance [https://p
 data_btc = yf.download('BTC-USD', start = '2020-01-01')
 df_btc = pd.DataFrame(data_btc)
 
-# plot exercise price reference
-# Assuming 'Close' is the column you want to plot
-df_btc['Close'].plot(figsize=(12, 6))
-plt.title('BTC-USD Close Price')
-plt.ylabel('Price')
-plt.xlabel('Date')
-st.pyplot(plt)
+# plot BTC
+data_btc_st = data_btc.stack()
+data_btc_st2 = data_btc_st.reset_index()
+fig = px.line(data_btc_st2, x='Date', y='Close', title='BTC Close Price')  # Use 'index' if Date is the index
+fig.update_layout(xaxis_title='Date', yaxis_title='Price')  # Update layout
+st.plotly_chart(fig)
 
 # text section
 st.header("Cotação Itaú")
@@ -53,12 +52,12 @@ st.header("Cotação Itaú")
 # data Itau
 df_acao_ita = yf.download('ITUB4.SA', start = '2020-01-01')
 
-# Assuming 'Close' is the column you want to plot
-df_acao_ita['Close'].plot(figsize=(12, 6))
-plt.title('ITUB4.SA Close Price')
-plt.ylabel('Price')
-plt.xlabel('Date')
-st.pyplot(plt)
+# plot Itau
+df_acao_ita_st = df_acao_ita.stack()
+df_acao_ita_st2 = df_acao_ita_st.reset_index()
+fig = px.line(df_acao_ita_st2, x='Date', y='Close', title='ITUB4.SA Close Price')  # Use 'index' if Date is the index
+fig.update_layout(xaxis_title='Date', yaxis_title='Price')  # Update layout
+st.plotly_chart(fig)
 
 st.header("Cotação BBA")
 
