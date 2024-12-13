@@ -8,12 +8,12 @@ import streamlit as st
 from datetime import datetime
 import matplotlib.pyplot as plt
 import yfinance as yf
-from ta import add_all_ta_features
+#from ta import add_all_ta_features
 import pandas_ta
 import btalib
 import numpy as np
 import seaborn as sns
-import hvplot.pandas
+#import hvplot.pandas
 import pandas as pd
 import plotly.express as px
 
