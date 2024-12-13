@@ -9,7 +9,7 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import yfinance as yf
 #from ta import add_all_ta_features
-import pandas_ta
+#import pandas_ta
 #import btalib
 import numpy as np
 import seaborn as sns
