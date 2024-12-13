@@ -4,7 +4,4 @@ streamlit
 yfinance
 pandas-datareader
 prophet
-ta
 pandas_ta
-btalib
-hvplot
