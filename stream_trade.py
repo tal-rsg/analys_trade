@@ -12,7 +12,7 @@ import yfinance as yf
 #import pandas_ta
 #import btalib
 import numpy as np
-import seaborn as sns
+#import seaborn as sns
 #import hvplot.pandas
 import pandas as pd
 import plotly.express as px
